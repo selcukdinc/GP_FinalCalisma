@@ -7,15 +7,15 @@
       "RelativeMoniker": "D:0:0:{AD70DCB1-668B-4EA8-B0BC-DBE8B31D3CD8}|FinalCalisma.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD70DCB1-668B-4EA8-B0BC-DBE8B31D3CD8}|FinalCalisma.csproj|c:\\users\\selcu\\masa\u00FCst\u00FC\\workallday\\eemuh\\ii. yy\\g\u00F6rsel programlama\\c#derstenba\u011F\u0131ms\u0131zlar\\finalcalisma\\dataaccessclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AD70DCB1-668B-4EA8-B0BC-DBE8B31D3CD8}|FinalCalisma.csproj|C:\\Users\\selcu\\Masa\u00FCst\u00FC\\WorkAllDay\\EEMuh\\II. YY\\G\u00F6rsel Programlama\\C#DerstenBa\u011F\u0131ms\u0131zlar\\FinalCalisma\\dataaccessclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD70DCB1-668B-4EA8-B0BC-DBE8B31D3CD8}|FinalCalisma.csproj|solutionrelative:dataaccessclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD70DCB1-668B-4EA8-B0BC-DBE8B31D3CD8}|FinalCalisma.csproj|c:\\users\\selcu\\masa\u00FCst\u00FC\\workallday\\eemuh\\ii. yy\\g\u00F6rsel programlama\\c#derstenba\u011F\u0131ms\u0131zlar\\finalcalisma\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AD70DCB1-668B-4EA8-B0BC-DBE8B31D3CD8}|FinalCalisma.csproj|C:\\Users\\selcu\\Masa\u00FCst\u00FC\\WorkAllDay\\EEMuh\\II. YY\\G\u00F6rsel Programlama\\C#DerstenBa\u011F\u0131ms\u0131zlar\\FinalCalisma\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD70DCB1-668B-4EA8-B0BC-DBE8B31D3CD8}|FinalCalisma.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD70DCB1-668B-4EA8-B0BC-DBE8B31D3CD8}|FinalCalisma.csproj|c:\\users\\selcu\\masa\u00FCst\u00FC\\workallday\\eemuh\\ii. yy\\g\u00F6rsel programlama\\c#derstenba\u011F\u0131ms\u0131zlar\\finalcalisma\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AD70DCB1-668B-4EA8-B0BC-DBE8B31D3CD8}|FinalCalisma.csproj|C:\\Users\\selcu\\Masa\u00FCst\u00FC\\WorkAllDay\\EEMuh\\II. YY\\G\u00F6rsel Programlama\\C#DerstenBa\u011F\u0131ms\u0131zlar\\FinalCalisma\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD70DCB1-668B-4EA8-B0BC-DBE8B31D3CD8}|FinalCalisma.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -38,8 +38,7 @@
               "RelativeToolTip": "DataAccessClass.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-02T07:23:13.26Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-02T07:23:13.26Z"
             },
             {
               "$type": "Document",
