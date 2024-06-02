@@ -18,18 +18,5 @@ namespace FinalCalisma
             dgv = ActiveDataGridView;
         }
 
-        //public void Read(string tableName)
-        //{
-        //    using(OleDbConnection con = new OleDbConnection(_connecitonString))
-        //    using (OleDbCommand cmd = new OleDbCommand())
-        //    {
-        //        cmd.Connection = con;
-        //        cmd.CommandText = "SELECT * FROM (P1)";
-        //        cmd.Parameters.Add("@P1", OleDbType.VarChar).Value = 
-
-                
-        //    }
-        //}
-
     }
 }
