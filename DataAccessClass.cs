@@ -117,8 +117,7 @@ namespace FinalCalisma
                 using (OleDbCommand cmd = new OleDbCommand())
                 {
                     cmd.Connection = con;
-                    cmd.CommandText = "SELECT * FROM " + tableName;
-
+                    cmd.CommandText = String.Format("SELECT * FROM {0}", tableName);
                     DataTable dt = new DataTable();
                     OleDbDataAdapter da = new OleDbDataAdapter(cmd);
 

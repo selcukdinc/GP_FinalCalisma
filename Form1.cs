@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing.Drawing2D;
 
 namespace FinalCalisma
 {
@@ -29,6 +30,8 @@ namespace FinalCalisma
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //pnlGeneral.Enabled = false;
+            tcMain.SelectedTab = tpDataTable;
             dac.Read("tblOgr");
             dac.Read("tblManavUrun", dgvManav);
             dac.Read("tblSofor", dgvSofor);
@@ -189,8 +192,179 @@ namespace FinalCalisma
 
 
 
+
         #endregion
 
-        
+        private void mtbMatrixN_KeyUp(object sender, KeyEventArgs e)
+        {
+            //Regex r1 = new Regex(@"^[0-9]+$");
+            //Match m1 = r1.Match(mtbMatrixN.Text);
+            //if (m1.Success)
+            //    pnlGeneral.Enabled = true;
+            //else
+            //    pnlGeneral.Enabled = false;
+        }
+
+        private void cbHand_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbHand.CheckState == CheckState.Checked)
+                pnlRnd.Enabled = false;
+            else
+                pnlRnd.Enabled = true;
+        }
+        DataTable dt1 = new DataTable("Matris 1");
+        DataTable dt2 = new DataTable("Matris 2");
+        DataTable dtRes = new DataTable("Matris Result");
+        private void btnRndGen_Click(object sender, EventArgs e)
+        {
+            Regex r1 = new Regex(@"^[0-9]+$");
+            Match m1 = r1.Match(mtbMin.Text), m2 = r1.Match(mtbMax.Text);
+            if (true) {
+                
+                Random R = new Random();
+                int Max = Convert.ToInt32(mtbMax.Text);
+                int Min = Convert.ToInt32(mtbMin.Text);
+                for (int i = 0; i < 3; i++)
+                {
+                    
+                    DataColumn dc1 = new DataColumn()
+                    {
+                        ColumnName = $"M1-{i+1}",
+                        MaxLength = 50,  
+                    };
+                    DataColumn dc2 = new DataColumn()
+                    {
+                        ColumnName = $"M2-{i + 1}",
+                        MaxLength = 5,
+                    };
+                    dt1.Columns.Add(dc1);
+                    dt2.Columns.Add(dc2);
+                }
+                for (int i = 0; i < 3; i++)
+                {
+                    
+                    dt1.Rows.Add(R.Next(Min,Max + 1), R.Next(Min, Max + 1) , R.Next(Min, Max + 1));
+                    dt2.Rows.Add(R.Next(Min, Max + 1), R.Next(Min, Max + 1), R.Next(Min, Max + 1));
+                }
+                dgvMatrix1.DataSource = dt1;
+                dgvMatrix2.DataSource = dt2;
+                for (int i = 0; i < 3; i++)
+                {
+                    dgvMatrix1.Columns[i].Width = 30;
+                    dgvMatrix2.Columns[i].Width = 30;
+                }
+                
+            }
+            else { }
+                
+            
+            
+        }
+
+        private void btnResult_Click(object sender, EventArgs e)
+        {
+            if(cbOperators.SelectedIndex != -1)
+            {
+                /*
+                    Topla
+                    Çıkar
+                    Böl
+                    Çarp
+                 */
+                try
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        DataColumn dcRes = new DataColumn()
+                        {
+                            ColumnName = $"MR-{i + 1}",
+                            MaxLength = 50,
+                        };
+                        dtRes.Columns.Add(dcRes);
+                    }
+                    for (int i = 0; i < 3; i++)
+                    {
+                        dtRes.Rows.Add(0, 0, 0);
+                    }
+                }
+                catch
+                {
+
+                }
+                
+
+                switch (cbOperators.SelectedIndex)
+                {
+                    case 0:
+                        for (int i = 0; i < 3; i++)
+                        {
+                            object[] temp = new object[3];
+                            for (int j = 0; j < 3; j++)
+                            {
+                                int matrix1 = Convert.ToInt32(dt1.Rows[i].ItemArray[j]);
+                                int matrix2 = Convert.ToInt32(dt2.Rows[i].ItemArray[j]);
+                                //MessageBox.Show($"{matrix1}+{matrix2} = {matrix1+matrix2}");
+                                temp[j] = matrix1 + matrix2;
+                            }
+                            dtRes.Rows[i].ItemArray = temp;
+                        }
+                        break;
+                    case 1:
+                        for (int i = 0; i < 3; i++)
+                        {
+                            object[] temp = new object[3];
+                            for (int j = 0; j < 3; j++)
+                            {
+                                int matrix1 = Convert.ToInt32(dt1.Rows[i].ItemArray[j]);
+                                int matrix2 = Convert.ToInt32(dt2.Rows[i].ItemArray[j]);
+                                //MessageBox.Show($"{matrix1}+{matrix2} = {matrix1+matrix2}");
+                                temp[j] = matrix1 - matrix2;
+                            }
+                            dtRes.Rows[i].ItemArray = temp;
+                        }
+                        break;
+                    case 2:
+                        for (int i = 0; i < 3; i++)
+                        {
+                            object[] temp = new object[3];
+                            for (int j = 0; j < 3; j++)
+                            {
+                                int matrix1 = Convert.ToInt32(dt1.Rows[i].ItemArray[j]);
+                                int matrix2 = Convert.ToInt32(dt2.Rows[i].ItemArray[j]);
+                                //MessageBox.Show($"{matrix1}+{matrix2} = {matrix1+matrix2}");
+                                try
+                                {
+                                    temp[j] = (double)matrix1 / matrix2;
+                                }
+                                catch
+                                {
+                                }
+                            }
+                            dtRes.Rows[i].ItemArray = temp;
+                        }
+                        break;
+                    case 3:
+                        for (int i = 0; i < 3; i++)
+                        {
+                            object[] temp = new object[3];
+                            for (int j = 0; j < 3; j++)
+                            {
+                                int matrix1 = Convert.ToInt32(dt1.Rows[i].ItemArray[j]);
+                                int matrix2 = Convert.ToInt32(dt2.Rows[i].ItemArray[j]);
+                                //MessageBox.Show($"{matrix1}+{matrix2} = {matrix1+matrix2}");
+                                temp[j] = matrix1 * matrix2;
+                            }
+                            dtRes.Rows[i].ItemArray = temp;
+                        }
+                        break;
+
+                }
+                dgvMatrixResult.DataSource = dtRes;
+                for (int i = 0; i < 3; i++)
+                {
+                    dgvMatrixResult.Columns[i].Width = 30;
+                }
+            }
+        }
     }
 }
